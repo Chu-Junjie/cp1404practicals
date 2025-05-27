@@ -20,3 +20,5 @@ else:
         message = "Passable"
     else:
         message = "Bad"
+
+print(message)
