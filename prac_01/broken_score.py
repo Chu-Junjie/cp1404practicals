@@ -2,6 +2,7 @@
 CP1404/CP5632 - Practical
 Program to determine score status with constants
 """
+
 MAX_SCORE = 100
 MIN_SCORE = 0
 EXCELLENT_THRESHOLD = 90
