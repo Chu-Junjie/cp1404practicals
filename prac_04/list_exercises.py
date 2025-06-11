@@ -1,4 +1,5 @@
 def main():
+    """Run the program: get numbers, display stats, check username."""
     numbers = get_numbers()
     print(f"The first number is {numbers[0]}")
     print(f"The last number is {numbers[-1]}")
@@ -9,7 +10,7 @@ def main():
     check_username()
 
 def get_numbers():
-    """Prompt user for 5 numbers and return them as a list of integers."""
+    """Get 5 numbers from user and return as a list."""
     numbers = []
     for i in range(5):
         number = int(input("Number: "))
@@ -18,6 +19,7 @@ def get_numbers():
 
 
 def check_username():
+    """Check if username is in the list."""
     usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swe345']
     username = input("Username: ")
     if username in usernames:
