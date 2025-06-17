@@ -26,7 +26,7 @@ a_names = [name for name in names if name.startswith('A')]
 print(a_names)
 
 # and here's the join string method being used to create a single string from the names like:
-# 'Ada Alan Angel Bob Jimi'
+# 'Ada Alan Angel Bob Jimi'.
 print(" ".join(sorted(names)))
 
 # list comprehension to create a list of all the full_names in lowercase format
