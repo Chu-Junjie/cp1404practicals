@@ -19,7 +19,7 @@ def get_numbers():
 
 
 def check_username():
-    """Check if username is in the list."""
+    """Check if username is in the list"""
     usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swe345']
     username = input("Username: ")
     if username in usernames:
