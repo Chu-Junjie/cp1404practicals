@@ -24,7 +24,7 @@ def main():
 
 
 def generate_quick_pick():
-    """Generate a list of unique random numbers for one quick pick."""
+    """Generate a list of unique random numbers for one quick pick"""
     numbers = []
     while len(numbers) < NUMBERS_PER_PICK:
         number = random.randint(MIN_NUMBER,MAX_NUMBER)
