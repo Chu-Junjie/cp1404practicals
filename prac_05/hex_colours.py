@@ -1,3 +1,7 @@
+"""
+Look up hex codes for colour names.
+"""
+
 # Constant dictionary of colour names and hex codes
 COLOUR_HEX_CODES = {
     "aliceblue": "#f0f8ff",
