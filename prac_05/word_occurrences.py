@@ -1,6 +1,9 @@
 """
 Word Occurrences Counter
 Count and display word occurrences in aligned columns.
+
+Estimated time: 15 minutes
+Actual time: 12 minutes
 """
 text = input("Text: ")
 words = text.split()
