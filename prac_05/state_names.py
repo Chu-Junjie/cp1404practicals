@@ -2,6 +2,9 @@
 CP1404/CP5632 Practical
 State names in a dictionary
 State names in a dictionary (PEP8 + improvements)
+
+Estimated time: 15 minutes
+Actual time: 12 minutes
 """
 
 # State abbreviations mapped to full state names with PEP8 style.
