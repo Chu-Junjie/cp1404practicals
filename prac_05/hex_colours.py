@@ -1,5 +1,8 @@
 """
 Look up hex codes for colour names.
+
+Estimated time: 15 minutes
+Actual time: 12 minutes
 """
 
 # Constant dictionary of colour names and hex codes
