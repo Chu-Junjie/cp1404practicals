@@ -4,6 +4,7 @@ Estimate: 30 minutes
 Actual:  18  minutes
 """
 from prac_06.guitar import Guitar
+
 guitars = []
 
 print("My guitars!")
