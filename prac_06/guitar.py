@@ -1,7 +1,7 @@
 """
 guitar
 Estimate: 20 minutes
-Actual:    minutes
+Actual:   20 minutes
 """
 
 CURRENT_YEAR = 2025
