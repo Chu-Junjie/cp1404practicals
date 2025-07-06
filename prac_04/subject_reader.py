@@ -14,16 +14,23 @@ def main():
 
 def load_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
-    data = []
-    with open(FILENAME) as input_file:
-        for line in input_file:
-            line = line.strip()  # Remove the \n
-            parts = line.split(',')  # Separate the data into its parts
-            subject = parts[0]
-            lecturer = parts[1]
-            student_count = int(parts[2])
-            data.append([subject, lecturer, student_count])
-    return data
+    subjects = []
+    input_file = open(FILENAME)
+    for line in input_file:
+        print(line)
+        print(repr(line))
+        line = line.strip()  # Remove the \n
+        parts = line.split(',')  # Separate the data into its parts
+        print(parts)
+        parts[2] = int(parts[2])
+        print(parts)
+        subjects.append(parts)
+        parts[2] = int(parts[2])
+        print(parts)
+        print("-----------")
+        print()
+    input_file.close()
+    return subjects
 
 
 def display_subjects(data):
