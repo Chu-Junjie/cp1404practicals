@@ -62,5 +62,29 @@ def load_projects(filename):
         print(f"File {filename} not found. Starting with an empty list.")
     return projects
 
+def save_projects(filename, projects):
+    with open(filename, "w") as file:
+        file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for project in projects:
+            file.write(project.to_save_format() + "\n")
 
+
+def display_projects(projects):
+    print("Incomplete projects: ")
+    for p in sorted([p for p in projects if not p.is_complete()], key=lambda x: x.priority):
+        print(f"  {p}")
+    print("Completed projects: ")
+    for p in sorted([p for p in projects if p.is_complete()], key=lambda x: x.priority):
+        print(f"  {p}")
+
+
+def filter_projects_by_date(projects):
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    try:
+        filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+        filtered = [p for p in projects if p.start_date > filter_date]
+        for p in sorted(filtered, key=lambda x: x.start_date):
+            print(p)
+    except ValueError:
+        print("Invalid date format.")
 main()
