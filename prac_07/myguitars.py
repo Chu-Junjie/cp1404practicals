@@ -6,6 +6,7 @@ import csv
 
 from prac_07.guitar import Guitar
 
+
 def main():
     filename = 'guitars.csv'
     guitars = load_guitar(filename)
@@ -38,6 +39,7 @@ def load_guitar(filename):
 
 
 def add_new_guitars(guitars):
+    """Prompt the user to add new guitars to the list."""
     print("\nAdd new guitars (leave name blank to finish):")
     name = input("Name: ")
     while name:
