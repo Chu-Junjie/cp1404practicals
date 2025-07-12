@@ -19,14 +19,21 @@ def main():
     for guitar in guitars:
         print(guitar)
 
+    write_guitars_to_file(filename, guitars)
+
 
 def load_guitar(filename):
+    """Load guitars from CSV file with proper header handling"""
     guitars = []
-    with open(filename, 'r') as file:
-        csv_reader = csv.reader(file)
-        for row in csv_reader:
-            name, year, cost = row
-            guitars.append(Guitar(name, int(year), float(cost)))
+    try:
+        with open(filename, 'r') as file:
+            file.readline()
+            csv_reader = csv.reader(file)
+            for row in csv_reader:
+                name, year, cost = row
+                guitars.append(Guitar(name, int(year), float(cost)))
+    except FileNotFoundError:
+        print(f"File '{filename}' not found. Starting with an empty list.")
     return guitars
 
 
@@ -43,6 +50,15 @@ def add_new_guitars(guitars):
         except ValueError:
             print("Invalid input. Please enter a valid year and cost.")
         name = input("Name: ")
+
+
+def write_guitars_to_file(filename, guitars):
+    """Write the guitars to a CSV file (overwrite existing)."""
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Name", "Year", "Cost"])
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
 
 
 if __name__ == "__main__":
