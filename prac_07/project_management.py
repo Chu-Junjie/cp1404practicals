@@ -87,4 +87,34 @@ def filter_projects_by_date(projects):
             print(p)
     except ValueError:
         print("Invalid date format.")
+
+
+def add_new_project(projects):
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = datetime.datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    project = Project(name, start_date, priority, cost_estimate, completion)
+    projects.append(project)
+
+
+def update_project(projects):
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+    try:
+        index = int(input("Project choice: "))
+        project = projects[index]
+        print(project)
+        new_completion = input("New Percentage: ")
+        new_priority = input("New Priority: ")
+        if new_completion:
+            project.completion = int(new_completion)
+        if new_priority:
+            project.priority = int(new_priority)
+    except (IndexError, ValueError):
+        print("Invalid input.")
+
+
 main()
