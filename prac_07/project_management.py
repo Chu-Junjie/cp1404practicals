@@ -48,15 +48,18 @@ def main():
 
 def load_projects(filename):
     projects = []
-    with open(filename, "r") as file:
-        file.readline()  # Skip header
-        for line in file:
-            parts = line.strip().split('\t')
-            if len(parts) == 5:
-                name, start_date_str, priority, cost_estimate, completion = parts
-                start_date = datetime.datetime.strptime(start_date_str, "%d/%m/%Y").date()
-                project = Project(name, start_date, int(priority), float(cost_estimate), int(completion))
-                projects.append(project)
+    try:
+        with open(filename, "r") as file:
+            file.readline()  # Skip header
+            for line in file:
+                parts = line.strip().split('\t')
+                if len(parts) == 5:
+                    name, start_date_str, priority, cost_estimate, completion = parts
+                    start_date = datetime.datetime.strptime(start_date_str, "%d/%m/%Y").date()
+                    project = Project(name, start_date, int(priority), float(cost_estimate), int(completion))
+                    projects.append(project)
+    except FileNotFoundError:
+        print(f"File {filename} not found. Starting with an empty list.")
     return projects
 
 
