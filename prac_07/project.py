@@ -16,3 +16,6 @@ class Project:
     def __str__(self):
         return (f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, "
                 f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion}%")
+
+    def __lt__(self, other):
+        return self.priority < other.priority
