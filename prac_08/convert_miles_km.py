@@ -27,7 +27,8 @@ class MilesConverterApp(App):
     def get_miles(self):
         """Get float value from input field, or 0 if invalid"""
         try:
-            return float(self.root.ids.input_miles.text)
+            miles_text = self.root.ids.input_miles.text
+            return float(miles_text)
         except ValueError:
             return 0.0
 
