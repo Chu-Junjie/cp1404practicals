@@ -7,9 +7,9 @@ class SquareApp(App):
         return self.root
 
 
-    def handle_calculate(self):
+    def handle_calculate(self, text):
         try:
-            value = float(self.root.ids.input_number.text)
+            value = float(text)
             result = value ** 2
             self.root.ids.output_number.text = str(result)
         except ValueError:
