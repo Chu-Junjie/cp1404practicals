@@ -12,17 +12,22 @@ class MilesConverterApp(App):
         self.output_text = "0.0"
         return self.root
 
-
     def convert(self):
         miles = self.get_miles()
         km = miles * MILES_TO_KM
         self.output_text = str(km)
 
-
     def handle_increment(self, change):
         miles = self.get_miles() + change
         self.root.ids.input_miles.text = str(miles)
         self.convert()
+
+    def get_miles(self):
+        try:
+            return float(self.root.ids.input_miles.text)
+        except ValueError:
+            return 0.0
+
 
 if __name__ == '__main__':
     MilesConverterApp().run()
