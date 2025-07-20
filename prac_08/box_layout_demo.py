@@ -8,7 +8,8 @@ class BoxLayoutDemo(App):
 
 
     def handle_greet(self):
-        print("greet")
+        print("test")
+        self.root.ids.output_label.text = "Hello"
 
 
 if __name__ == '__main__':
