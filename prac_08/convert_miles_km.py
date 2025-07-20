@@ -5,6 +5,7 @@ from kivy.properties import StringProperty
 MILES_TO_KM = 1.60934
 
 class MilesConverterApp(App):
+    """Main application class for the Miles to Kilometres converter"""
     output_text = StringProperty()
     def build(self):
         self.title = "Convert Miles to Kilometres"
