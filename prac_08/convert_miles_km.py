@@ -13,16 +13,19 @@ class MilesConverterApp(App):
         return self.root
 
     def convert(self):
+        """Convert miles to km when 'Convert' button pressed"""
         miles = self.get_miles()
         km = miles * MILES_TO_KM
         self.output_text = str(km)
 
     def handle_increment(self, change):
+        """Handle Up/Down buttons"""
         miles = self.get_miles() + change
         self.root.ids.input_miles.text = str(miles)
         self.convert()
 
     def get_miles(self):
+        """Get float value from input field, or 0 if invalid"""
         try:
             return float(self.root.ids.input_miles.text)
         except ValueError:
