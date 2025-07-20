@@ -8,7 +8,13 @@ class SquareApp(App):
 
 
     def handle_calculate(self):
-        print("Square")
+        try:
+            value = float(self.root.ids.input_number.text)
+            result = value ** 2
+            self.root.ids.output_number.text = str(result)
+        except ValueError:
+            self.root.ids.output_number.text = "Invalid input"
+
 
 if __name__ == '__main__':
     SquareApp().run()
