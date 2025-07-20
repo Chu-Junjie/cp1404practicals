@@ -3,6 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.label import Label
 
 class DynamicLabelsApp(App):
+    """Main application class for dynamically adding labels."""
     def build(self):
         self.root = Builder.load_file("dynamic_labels.kv")
 
