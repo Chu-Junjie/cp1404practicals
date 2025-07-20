@@ -6,6 +6,9 @@ class DynamicLabelsApp(App):
     def build(self):
         self.root = Builder.load_file("dynamic_labels.kv")
 
+        self.root.ids.main.add_widget(Label(text="Hello"))
+        self.root.ids.main.add_widget(Label(text="World"))
+        self.root.ids.main.add_widget(Label(text="!"))
         return self.root
 
 if __name__ == '__main__':
