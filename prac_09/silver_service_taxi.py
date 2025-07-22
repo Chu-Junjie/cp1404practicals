@@ -5,6 +5,7 @@ Car class
 
 from prac_09.taxi import Taxi
 
+
 class SilverServiceTaxi(Taxi):
     """A Taxi that includes a fanciness level and flagfall charge."""
     flagfall = 4.50
@@ -13,7 +14,6 @@ class SilverServiceTaxi(Taxi):
         """Initialise a SilverServiceTaxi with fanciness multiplier."""
         super().__init__(name, fuel)
         self.fanciness = fanciness
-
         self.price_per_km = Taxi.price_per_km * fanciness
 
     def get_fare(self):
