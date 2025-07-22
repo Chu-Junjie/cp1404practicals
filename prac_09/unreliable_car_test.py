@@ -1,10 +1,10 @@
-from prac_09.unreliable_car import Unreliable_car
+from prac_09.unreliable_car import UnreliableCar
 
 def main():
     """Test the UnreliableCar class by attempting to drive it multiple times."""
 
     # Create a car which have 30% reliable.
-    car = Unreliable_car("Old Bomb", 100, 30)
+    car = UnreliableCar("Old Bomb", 100, 30)
 
     # Try to drive 10 times and each time drive 10km.
     for i in range(10):
