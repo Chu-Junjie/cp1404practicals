@@ -2,7 +2,7 @@ from taxi import Taxi
 
 def main():
     """Test the Taxi class by driving and calculating fares."""
-    my_taxi = Taxi("Prius 1", 100, 1.23)
+    my_taxi = Taxi("Prius 1", 100)
 
     # Drive 40km
     my_taxi.drive(40)
