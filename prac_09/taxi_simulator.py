@@ -35,12 +35,12 @@ def main():
                     current_taxi.start_fare()
                     current_taxi.drive(distance)
                     trip_cost = current_taxi.get_fare()
-                    print(f"Your {current_taxi.name} trip cost youg ${trip_cost:.2f}")
+                    print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
                     total_bill += trip_cost
                 except ValueError:
                     print("Invalid distance.")
             else:
-                print("You need to choose a taxi before you can drive")
+                print(f"You need to choose a taxi before you can drive")
 
         else:
             print("Invalid option")
@@ -49,9 +49,9 @@ def main():
         print(menu)
         choice = input(">>> ").lower()
 
-        print(f"Total trip cost: ${total_bill:.2f}")
-        print("Taxis are now:")
-        for i, taxi in enumerate(taxis):
-            print(f"{i} - {taxi}")
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis are now:")
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
 
 main()
