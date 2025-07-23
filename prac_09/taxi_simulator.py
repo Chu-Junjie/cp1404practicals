@@ -27,6 +27,7 @@ def main():
                 current_taxi = taxis[taxi_choice]
             except(ValueError, IndexError):
                 print("Invalid taxi choice")
+
         elif choice == 'd':
             if current_taxi:
                 try:
@@ -40,9 +41,17 @@ def main():
                     print("Invalid distance.")
             else:
                 print("You need to choose a taxi before you can drive")
+
         else:
             print("Invalid option")
 
         print(f"Bill to date: ${total_bill:.2f}")
         print(menu)
         choice = input(">>> ").lower()
+
+        print(f"Total trip cost: ${total_bill:.2f}")
+        print("Taxis are now:")
+        for i, taxi in enumerate(taxis):
+            print(f"{i} - {taxi}")
+
+main()
