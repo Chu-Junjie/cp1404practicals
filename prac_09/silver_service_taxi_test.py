@@ -1,6 +1,9 @@
+"""Test script for the SilverServiceTaxi class."""
+
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
 def main():
+    """Create a SilverServiceTaxi, drive it for 18 km."""
     taxi = SilverServiceTaxi("Fancy Car", 100, 2)
 
     taxi.drive(18)
