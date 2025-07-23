@@ -29,3 +29,20 @@ def main():
                 print("Invalid taxi choice")
         elif choice == 'd':
             if current_taxi:
+                try:
+                    distance = float(input("Drive how far?"))
+                    current_taxi.start_fare()
+                    current_taxi.drive(distance)
+                    trip_cost = current_taxi.get_fare()
+                    print(f"Your {current_taxi.name} trip cost youg ${trip_cost:.2f}")
+                    total_bill += trip_cost
+                except ValueError:
+                    print("Invalid distance.")
+            else:
+                print("You need to choose a taxi before you can drive")
+        else:
+            print("Invalid option")
+
+        print(f"Bill to date: ${total_bill:.2f}")
+        print(menu)
+        choice = input(">>> ").lower()
