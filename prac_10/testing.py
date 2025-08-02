@@ -54,6 +54,8 @@ def run_tests():
 
 run_tests()
 
+doctest.testmod()
+
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
 
