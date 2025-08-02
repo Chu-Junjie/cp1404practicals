@@ -52,6 +52,23 @@ def run_tests():
     assert car.fuel == 0, "Car does not set default fuel correctly"
 
 
+def format_sentence(phrase):
+    """
+    Format a phrase to start with a capital and end with a single full stop.
+    >>> format_sentence("hello")
+    'Hello.'
+    >>> format_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_sentence("what is this")
+    'What is this.'
+    """
+    if not phrase:
+        return ""
+    sentence = phrase[0].upper() + phrase[1:]
+    if not sentence.endswith("."):
+        sentence += "."
+    return sentence
+
 run_tests()
 
 doctest.testmod()
