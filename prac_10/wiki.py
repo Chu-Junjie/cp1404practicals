@@ -1,8 +1,9 @@
 import wikipedia
 
 def search_wikipedia():
+    """Simple tool to search Wikipedia titles and display page info."""
     print("Wikipedia Search Tool (press Enter to quit)\n")
-    for _ in range(10):
+    for _ in range(10):  # Allow up to 10 searches
         title = input("Enter page title: ").strip()
 
         if title != "":
