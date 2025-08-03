@@ -60,5 +60,18 @@ def convert_f_form():
     return render_template("convert.html", result="", result_f=result_f)
 
 
+@app.route('/result', methods=["POST"])
+def result():
+    """Process the Wikipedia search term and display summary."""
+    search_term = request.form['term']
+    try:
+        summary = wikipedia.summary(search_term)
+    except wikipedia.exceptions.DisambiguationError as e:
+        summary = f"Too vague. Try again. Options: {e.options}"
+    except wikipedia.exceptions.PageError:
+        summary = "Page not found. Try another term."
+    return render_template("result.html", term=search_term, summary=summary)
+
+
 if __name__ == '__main__':
     app.run()
