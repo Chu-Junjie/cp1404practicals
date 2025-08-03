@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
+import wikipedia
 
 app = Flask(__name__)
+app.secret_key = "your-secret-key"
 
 
 def celsius_to_fahrenheit(celsius):
@@ -14,9 +16,9 @@ def fahrenheit_to_celsius(f):
 
 
 @app.route('/')
-def hello_world():
-    """Homepage greeting."""
-    return "<h1>Hello World :)</h1>"
+def index():
+    """Show the search form."""
+    return render_template("search.html")
 
 
 @app.route('/f/<celsius>')
