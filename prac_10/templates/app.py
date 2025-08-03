@@ -2,18 +2,22 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+
 def celsius_to_fahrenheit(celsius):
     """Convert Celsius to Fahrenheit."""
     return celsius * 9 / 5 + 32
+
 
 def fahrenheit_to_celsius(f):
     """Convert Fahrenheit to Celsius."""
     return (f - 32) * 5 / 9
 
+
 @app.route('/')
 def hello_world():
     """Homepage greeting."""
     return "<h1>Hello World :)</h1>"
+
 
 @app.route('/f/<celsius>')
 def convert_url(celsius):
@@ -24,6 +28,7 @@ def convert_url(celsius):
         return f"{celsius_value:.2f}°C = {fahrenheit_value:.2f}°F"
     except ValueError:
         return "Invalid input. Please enter a number like /f/36.5"
+
 
 @app.route('/convert', methods=['GET', 'POST'])
 def convert_form():
@@ -38,6 +43,7 @@ def convert_form():
             return "<h2>Invalid input. Please enter a number.</h2>"
 
     return render_template("convert.html", result=result)
+
 
 @app.route('/convert_f', methods=['POST'])
 def convert_f_form():
