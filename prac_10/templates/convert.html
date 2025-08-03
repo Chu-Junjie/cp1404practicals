@@ -7,26 +7,26 @@
 <body>
     <h1>Celsius to Fahrenheit</h1>
     <form method="post" action="/convert">
-        <label>Enter Celsius temperature:</label>
-        <input name="celsius">
-        <input type="submit" value="Convert to °F">
+        <label for="celsius">Celsius:</label>
+        <input type="text" name="celsius" id="celsius" required>
+        <input type="submit" value="Convert to Fahrenheit">
     </form>
 
     {% if result %}
-        <h2>{{ result }}</h2>
+        <p><strong>Result:</strong> {{ result }}</p>
     {% endif %}
 
     <hr>
 
     <h1>Fahrenheit to Celsius</h1>
     <form method="post" action="/convert_f">
-        <label>Enter Fahrenheit temperature:</label>
-        <input name="fahrenheit">
-        <input type="submit" value="Convert to °C">
+        <label for="fahrenheit">Fahrenheit:</label>
+        <input type="text" name="fahrenheit" id="fahrenheit" required>
+        <input type="submit" value="Convert to Celsius">
     </form>
 
     {% if result_f %}
-        <h2>{{ result_f }}</h2>
+        <p><strong>Result:</strong> {{ result_f }}</p>
     {% endif %}
 </body>
 </html>
